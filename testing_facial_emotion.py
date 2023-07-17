@@ -2,13 +2,15 @@ import cv2
 import numpy as np
 from keras.models import load_model
 
-emotion_dict={0:'Anger' ,1:'Contempt', 2:'Disgust', 3:'Fear', 4:'Happiness', 5:'Neutral', 6:'Sadness', 7:'Surprise'}
+emotion_dict={0:'Neutral' ,1:'Contempt', 2:'Disgust', 3:'Fear', 4:'Sadness', 5:'Anger', 6:'Happiness', 7:'Surprise'}
 
 emotion_model = load_model('github_projects/Facial_recog/facial_emotion_recognition_model.h5')
 
-# start the webcam feed
-cap = cv2.VideoCapture(0)
+# start the default webcam feed
+# cap = cv2.VideoCapture(0)
 
+# detecting expression on recorded video
+cap = cv2.VideoCapture("hapiness_face_reaction.mp4")
 
 while True:
     ret, frame = cap.read()
