@@ -4,7 +4,7 @@ from keras.models import load_model
 
 emotion_dict={0:'Neutral' ,1:'Contempt', 2:'Disgust', 3:'Fear', 4:'Sadness', 5:'Anger', 6:'Happiness', 7:'Surprise'}
 
-emotion_model = load_model('github_projects/Facial_recog/facial_emotion_recognition_model.h5')
+emotion_model = load_model('facial_emotion_recognition_model.h5')
 
 # start the default webcam feed
 # cap = cv2.VideoCapture(0)
@@ -20,7 +20,7 @@ while True:
     frame = cv2.resize(frame, (1280, 720))
 
     # Find haarcascade to draw bounding box around the face
-    face_detector = cv2.CascadeClassifier('github_projects/Facial_recog/haarcascades/haarcascade_frontalface_default.xml')
+    face_detector = cv2.CascadeClassifier('haarcascades/haarcascade_frontalface_default.xml')
 
     # Detecting the faces available on camera 
     num_faces = face_detector.detectMultiScale(frame, scaleFactor=1.3, minNeighbors=5)
